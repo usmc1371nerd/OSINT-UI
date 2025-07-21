@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  hacker-ui:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server:/app/server
+      - ./client:/app/client
+      - /home/hackerdad/remote-storage/rcss-logs:/home/hackerdad/remote-storage/rcss-logs
+    environment:
+      - NODE_ENV=production
